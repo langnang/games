@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+  <!-- 必须的 meta 标签 -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>tic-tac-toe</title>
+
+  <link rel="stylesheet" href="./lib/normalize.css@8.0.1/normalize.css">
+
+  <!-- Bootstrap 的 CSS 文件 -->
+  <link rel="stylesheet" href="./lib/bootstrap@4.6.2/bootstrap.min.css" crossorigin="anonymous">
+
+
+  <link rel="stylesheet" href="./assets/app/css/app.css">
+
+  <link rel="stylesheet" href="./assets/tictactoe/css/app.css">
+</head>
+
+<body>
+  <div class="container-fluid" id="app">
+
+    {{> layoutHeader}}
+
+    <main class="container" id="layout-main">
+      <div class="mask">
+        <div class="select">
+          <p>选X(先手)还是选O(后手)?
+            <br>反正你也赢不了_(:з)∠)_
+          </p>
+          <hr>
+          <input type="button" value="X" data-value="X">
+          <input type="button" value="O" data-value="O">
+        </div>
+      </div>
+
+      <main>
+        <button type="button" value="0" data-index="0"></button>
+        <button type="button" value="0" data-index="1"></button>
+        <button type="button" value="0" data-index="2"></button>
+        <button type="button" value="0" data-index="3"></button>
+        <button type="button" value="0" data-index="4"></button>
+        <button type="button" value="0" data-index="5"></button>
+        <button type="button" value="0" data-index="6"></button>
+        <button type="button" value="0" data-index="7"></button>
+        <button type="button" value="0" data-index="8"></button>
+      </main>
+    </main>
+
+    {{> layoutFooter}}
+
+  </div>
+  <!-- JavaScript 文件是可选的。从以下两种建议中选择一个即可！ -->
+
+  <!-- 选项 1：jQuery 和 Bootstrap 集成包（集成了 Popper） -->
+  <script src="./lib/jquery@3.7.1/jquery.min.js" crossorigin="anonymous"></script>
+  <script src="./lib/bootstrap@4.6.2/bootstrap.min.js" crossorigin="anonymous"></script>
+
+  <!-- 选项 2：Popper 和 Bootstrap 的 JS 插件各自独立 -->
+  <!--
+    <script src="https://unpkg.com/jquery@3.5.1/dist/jquery.slim.min.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/popper.js@1.16.1/dist/umd/popper.min.js"crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/bootstrap@4.6.2/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    -->
+
+  <script src="./lib/handlebars@4.7.8/handlebars.min.js"></script>
+
+  <script src="./assets/app/js/app.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      render({
+        title: "tic-tac-toe | Games",
+        paginator: [
+        ],
+        dependencies: [
+        ],
+        references: [
+          { "title": "accelerator-feng/Tic-Tac-Toe", url: "https://github.com/accelerator-feng/Tic-Tac-Toe" },
+        ],
+      });
+    })
+  </script>
+
+  <script src="./assets/tictactoe/js/app.js"></script>
+</body>
+
+</html>
