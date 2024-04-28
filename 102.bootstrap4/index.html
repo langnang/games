@@ -36,8 +36,9 @@
         </div>
       </div>
       <div class="row row-cols-3">
+        {{#each paginator}}
         <div class="col px-1 my-1">
-          <div class="card text-decoration-none">
+          <a href="{{this.url}}" class="card text-decoration-none">
             <div class="card-body p-2">
               <div class="media">
                 <svg class="bd-placeholder-img mr-2" width="48" height="48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 64x64" preserveAspectRatio="xMidYMid slice" focusable="false">
@@ -45,167 +46,16 @@
                   <rect width="100%" height="100%" fill="#6c757d"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">64x64</text>
                 </svg>
                 <div class="media-body">
-                  <h5 class="card-title mt-0">Card title </h5>
-                  <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                  <h5 class="card-title mt-0">{{this.title}}</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">{{this.subtitle}}</h6>
                 </div>
               </div>
-              <p class="card-text text-nowrap text-truncate w-100">Will you do the same for me? It's time to face the music I'm no longer your muse. Heard it's beautiful, be the judge and my girls gonna take a vote. I can feel a phoenix inside of me. Heaven is jealous of our love, angels are crying from up above. Yeah, you take me to utopia.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col px-1 my-1">
-          <div class="card text-decoration-none">
-            <div class="card-body p-2">
-              <div class="media">
-                <svg class="bd-placeholder-img mr-2" width="48" height="48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 64x64" preserveAspectRatio="xMidYMid slice" focusable="false">
-                  <title>Placeholder</title>
-                  <rect width="100%" height="100%" fill="#6c757d"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">64x64</text>
-                </svg>
-                <div class="media-body">
-                  <h5 class="card-title mt-0">2048 </h5>
-                  <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                </div>
-              </div>
-              <p class="card-text text-nowrap text-truncate w-100">Will you do the same for me? It's time to face the music I'm no longer your muse. Heard it's beautiful, be the judge and my girls gonna take a vote. I can feel a phoenix inside of me. Heaven is jealous of our love, angels are crying from up above. Yeah, you take me to utopia.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col px-1 my-1">
-          <div class="card text-decoration-none">
-            <div class="card-body p-2">
-              <div class="media">
-                <svg class="bd-placeholder-img mr-2" width="48" height="48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 64x64" preserveAspectRatio="xMidYMid slice" focusable="false">
-                  <title>Placeholder</title>
-                  <rect width="100%" height="100%" fill="#6c757d"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">64x64</text>
-                </svg>
-                <div class="media-body">
-                  <h5 class="card-title mt-0">井字棋 </h5>
-                  <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                </div>
-              </div>
-              <p class="card-text text-nowrap text-truncate w-100">Will you do the same for me? It's time to face the music I'm no longer your muse. Heard it's beautiful, be the judge and my girls gonna take a vote. I can feel a phoenix inside of me. Heaven is jealous of our love, angels are crying from up above. Yeah, you take me to utopia.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col px-1 my-1">
-          <div class="card text-decoration-none">
-            <div class="card-body p-2">
-              <div class="media">
-                <svg class="bd-placeholder-img mr-2" width="48" height="48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 64x64" preserveAspectRatio="xMidYMid slice" focusable="false">
-                  <title>Placeholder</title>
-                  <rect width="100%" height="100%" fill="#6c757d"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">64x64</text>
-                </svg>
-                <div class="media-body">
-                  <h5 class="card-title mt-0">井字棋 </h5>
-                  <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                </div>
-              </div>
-              <p class="card-text text-nowrap text-truncate w-100">Will you do the same for me? It's time to face the music I'm no longer your muse. Heard it's beautiful, be the judge and my girls gonna take a vote. I can feel a phoenix inside of me. Heaven is jealous of our love, angels are crying from up above. Yeah, you take me to utopia.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col px-1 my-1">
-          <div class="card text-decoration-none">
-            <div class="card-body p-2">
-              <div class="media">
-                <svg class="bd-placeholder-img mr-2" width="48" height="48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 64x64" preserveAspectRatio="xMidYMid slice" focusable="false">
-                  <title>Placeholder</title>
-                  <rect width="100%" height="100%" fill="#6c757d"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">64x64</text>
-                </svg>
-                <div class="media-body">
-                  <h5 class="card-title mt-0">推箱子 </h5>
-                  <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                </div>
-              </div>
-              <p class="card-text text-nowrap text-truncate w-100">Will you do the same for me? It's time to face the music I'm no longer your muse. Heard it's beautiful, be the judge and my girls gonna take a vote. I can feel a phoenix inside of me. Heaven is jealous of our love, angels are crying from up above. Yeah, you take me to utopia.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col px-1 my-1">
-          <div class="card text-decoration-none">
-            <div class="card-body p-2">
-              <div class="media">
-                <svg class="bd-placeholder-img mr-2" width="48" height="48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 64x64" preserveAspectRatio="xMidYMid slice" focusable="false">
-                  <title>Placeholder</title>
-                  <rect width="100%" height="100%" fill="#6c757d"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">64x64</text>
-                </svg>
-                <div class="media-body">
-                  <h5 class="card-title mt-0">俄罗斯方块 </h5>
-                  <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                </div>
-              </div>
-              <p class="card-text text-nowrap text-truncate w-100">Will you do the same for me? It's time to face the music I'm no longer your muse. Heard it's beautiful, be the judge and my girls gonna take a vote. I can feel a phoenix inside of me. Heaven is jealous of our love, angels are crying from up above. Yeah, you take me to utopia.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col px-1 my-1">
-          <div class="card text-decoration-none">
-            <div class="card-body p-2">
-              <div class="media">
-                <svg class="bd-placeholder-img mr-2" width="48" height="48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 64x64" preserveAspectRatio="xMidYMid slice" focusable="false">
-                  <title>Placeholder</title>
-                  <rect width="100%" height="100%" fill="#6c757d"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">64x64</text>
-                </svg>
-                <div class="media-body">
-                  <h5 class="card-title mt-0">数独 </h5>
-                  <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                </div>
-              </div>
-              <p class="card-text text-nowrap text-truncate w-100">Will you do the same for me? It's time to face the music I'm no longer your muse. Heard it's beautiful, be the judge and my girls gonna take a vote. I can feel a phoenix inside of me. Heaven is jealous of our love, angels are crying from up above. Yeah, you take me to utopia.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col px-1 my-1">
-          <div class="card text-decoration-none">
-            <div class="card-body p-2">
-              <div class="media">
-                <svg class="bd-placeholder-img mr-2" width="48" height="48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 64x64" preserveAspectRatio="xMidYMid slice" focusable="false">
-                  <title>Placeholder</title>
-                  <rect width="100%" height="100%" fill="#6c757d"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">64x64</text>
-                </svg>
-                <div class="media-body">
-                  <h5 class="card-title mt-0">来找茬 </h5>
-                  <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                </div>
-              </div>
-              <p class="card-text text-nowrap text-truncate w-100">Will you do the same for me? It's time to face the music I'm no longer your muse. Heard it's beautiful, be the judge and my girls gonna take a vote. I can feel a phoenix inside of me. Heaven is jealous of our love, angels are crying from up above. Yeah, you take me to utopia.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col px-1 my-1">
-          <div class="card text-decoration-none">
-            <div class="card-body p-2">
-              <div class="media">
-                <svg class="bd-placeholder-img mr-2" width="48" height="48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 64x64" preserveAspectRatio="xMidYMid slice" focusable="false">
-                  <title>Placeholder</title>
-                  <rect width="100%" height="100%" fill="#6c757d"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">64x64</text>
-                </svg>
-                <div class="media-body">
-                  <h5 class="card-title mt-0">谁是卧底 </h5>
-                  <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                </div>
-              </div>
-              <p class="card-text text-nowrap text-truncate w-100">Will you do the same for me? It's time to face the music I'm no longer your muse. Heard it's beautiful, be the judge and my girls gonna take a vote. I can feel a phoenix inside of me. Heaven is jealous of our love, angels are crying from up above. Yeah, you take me to utopia.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col px-1 my-1">
-          <a class="card text-decoration-none" href="adarkroom.html">
-            <div class="card-body p-2">
-              <div class="media">
-                <svg class="bd-placeholder-img mr-2" width="48" height="48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 64x64" preserveAspectRatio="xMidYMid slice" focusable="false">
-                  <title>Placeholder</title>
-                  <rect width="100%" height="100%" fill="#6c757d"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">64x64</text>
-                </svg>
-                <div class="media-body">
-                  <h5 class="card-title mt-0">小黑屋 </h5>
-                  <h6 class="card-subtitle mb-2 text-muted">A Dark Room</h6>
-                </div>
-              </div>
-              <p class="card-text text-nowrap text-truncate w-100">Will you do the same for me? It's time to face the music I'm no longer your muse. Heard it's beautiful, be the judge and my girls gonna take a vote. I can feel a phoenix inside of me. Heaven is jealous of our love, angels are crying from up above. Yeah, you take me to utopia.</p>
+              <p class="card-text text-nowrap text-truncate w-100">{{this.description}}</p>
             </div>
           </a>
         </div>
+        {{/each}}
+
       </div>
     </main>
 
@@ -233,6 +83,17 @@
     $(document).ready(function () {
       render({
         title: "Games",
+        paginator: [
+          { title: "2048", subtitle: "subtitle", description: "...", url: "#" },
+          { title: "井字棋", subtitle: "subtitle", description: "...", url: "#" },
+          { title: "推箱子", subtitle: "subtitle", description: "...", url: "#" },
+          { title: "俄罗斯方块", subtitle: "subtitle", description: "...", url: "#" },
+          { title: "数独", subtitle: "subtitle", description: "...", url: "#" },
+          { title: "2048", subtitle: "subtitle", description: "...", url: "2048.html" },
+          { title: "来找茬", subtitle: "subtitle", description: "...", url: "#" },
+          { title: "谁是卧底", subtitle: "subtitle", description: "...", url: "#" },
+          { title: "小黑屋", subtitle: "A Dark Room", description: "...", url: "adarkroom.html" },
+        ],
         dependencies: [
           { "title": "normalize.css@8.0.1", url: "#" },
           { "title": "animate.css@4.1.1", url: "#" },

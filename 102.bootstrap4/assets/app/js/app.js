@@ -63,10 +63,12 @@ function render(data) {
   var template = Handlebars.compile(html);
   // execute the compiled template and print the output to the console
   // console.log(template({ doesWhat: "rocks!" }));
-  $("#app").html(template({
+
+  return new Promise(resolve => resolve($("#app").html(template({
+    ...data,
     title: title || "Games",
     description: description || "...",
     dependencies: dependencies || [],
     references: references || [],
-  }))
+  }))))
 }
