@@ -16,8 +16,8 @@ Handlebars.registerPartial('layoutFooter', `
 <footer id="layout-footer" class="container-fluid text-light bg-dark">
   <div class="container">
     <div class="row row-cols-3 py-1">
-      <div class="col"></div>
-      <div class="col">
+      <div class="col text-center"></div>
+      <div class="col text-center">
         <h5 class="my-1">项目依赖</h5>
         <ul class="list-unstyled my-1">
           {{#each dependencies}}
@@ -25,7 +25,7 @@ Handlebars.registerPartial('layoutFooter', `
           {{/each}}
         </ul>
       </div>
-      <div class="col">
+      <div class="col text-center">
         <h5 class="my-1">参考文献</h5>
         <ul class="list-unstyled my-1">
           {{#each references}}
