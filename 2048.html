@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+  <!-- 必须的 meta 标签 -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>2048</title>
+
+  <link rel="stylesheet" href="./lib/normalize.css@8.0.1/normalize.css">
+
+  <!-- Bootstrap 的 CSS 文件 -->
+  <link rel="stylesheet" href="./lib/bootstrap@4.6.2/bootstrap.min.css" crossorigin="anonymous">
+
+
+  <link rel="stylesheet" href="./assets/app/css/app.css">
+
+  <link rel="stylesheet" href="./assets/2048/css/app.css">
+</head>
+
+<body>
+  <div class="container-fluid" id="app">
+    <div class="d-none d-md-block">
+      {{> layoutHeader}}
+    </div>
+
+    <main class="container" id="layout-main">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div class="heading">
+            <h1 class="title">2048</h1>
+            <div class="scores-container">
+              <div class="score-container">0</div>
+              <div class="best-container">0</div>
+            </div>
+          </div>
+
+          <div class="above-game">
+            <p class="game-intro">Join the numbers and get to the <strong>2048 tile!</strong></p>
+            <a class="restart-button">New Game</a>
+          </div>
+
+          <div class="game-container">
+            <div class="game-message">
+              <p></p>
+              <div class="lower">
+                <a class="keep-playing-button">Keep going</a>
+                <a class="retry-button">Try again</a>
+              </div>
+            </div>
+
+            <div class="grid-container">
+              <div class="grid-row">
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+              </div>
+              <div class="grid-row">
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+              </div>
+              <div class="grid-row">
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+              </div>
+              <div class="grid-row">
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+              </div>
+            </div>
+
+            <div class="tile-container">
+
+            </div>
+          </div>
+          <div id="podinfo" class="game-explanation">
+          </div>
+          <hr>
+          <p class="game-explanation">
+            <strong class="important">How to play:</strong> Use your <strong>arrow keys</strong> to move the tiles. When two tiles with the same number touch, they <strong>merge into one!</strong>
+          </p>
+          <hr>
+          <p>
+            <strong class="important">Note:</strong> This site is the official version of 2048. You can play it on your phone via <a href="http://git.io/2048">http://git.io/2048.</a> All other apps or sites are derivatives or fakes, and should be used with caution.
+          </p>
+          <hr>
+          <p>
+            Created by <a href="http://gabrielecirulli.com" target="_blank">Gabriele Cirulli.</a> Based on <a href="https://itunes.apple.com/us/app/1024!/id823499224" target="_blank">1024 by Veewo Studio</a> and conceptually similar to <a href="http://asherv.com/threes/" target="_blank">Threes by Asher Vollmer.</a>
+          </p>
+        </div>
+      </div>
+
+    </main>
+
+    {{> layoutFooter}}
+
+  </div>
+  <!-- JavaScript 文件是可选的。从以下两种建议中选择一个即可！ -->
+
+  <!-- 选项 1：jQuery 和 Bootstrap 集成包（集成了 Popper） -->
+  <script src="./lib/jquery@3.7.1/jquery.min.js" crossorigin="anonymous"></script>
+  <script src="./lib/bootstrap@4.6.2/bootstrap.min.js" crossorigin="anonymous"></script>
+
+  <!-- 选项 2：Popper 和 Bootstrap 的 JS 插件各自独立 -->
+  <!--
+    <script src="https://unpkg.com/jquery@3.5.1/dist/jquery.slim.min.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/popper.js@1.16.1/dist/umd/popper.min.js"crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/bootstrap@4.6.2/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    -->
+
+  <script src="./lib/handlebars@4.7.8/handlebars.min.js"></script>
+
+  <script src="./assets/app/js/app.js"></script>
+  <script src="./assets/2048/js/app.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      render({
+        title: "2048 | Games",
+        dependencies: [
+        ],
+        references: [
+          { title: "DaoCloud/dao-2048", url: "https://github.com/DaoCloud/dao-2048/" }
+        ],
+      }).then(() => {
+        new GameManager(4, KeyboardInputManager, HTMLActuator, LocalStorageManager);
+
+      });
+    })
+  </script>
+
+</body>
+
+</html>

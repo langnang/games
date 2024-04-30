@@ -33,7 +33,7 @@ div.clear {
 
 div#wrapper {
   margin: auto;
-  width: 700px;
+  /* width: 700px; */
   padding: 20px 0 0 220px;
   position: relative;
 }
@@ -53,7 +53,7 @@ div#content {
 }
 
 div#header {
-  padding-bottom: 20px;
+  padding-bottom: 30px;
   height: 20px;
 }
 
@@ -165,7 +165,7 @@ div.button {
   border: 1px solid black;
   width: 100px;
   margin-bottom: 5px;
-  padding: 5px 10px;
+  padding: 5px 0px;
   cursor: pointer;
   -webkit-touch-callout: none;
   -webkit-user-select: none;

@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+  <!-- 必须的 meta 标签 -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Sudoku</title>
+
+  <link rel="stylesheet" href="./lib/normalize.css@8.0.1/normalize.css">
+
+  <!-- Bootstrap 的 CSS 文件 -->
+  <link rel="stylesheet" href="./lib/bootstrap@4.6.2/bootstrap.min.css" crossorigin="anonymous">
+
+
+  <link rel="stylesheet" href="./assets/app/css/app.css">
+  <link rel="stylesheet" href="./assets/sudoku/css/app.css">
+</head>
+
+<body>
+  <div class="container-fluid" id="app">
+
+    {{> layoutHeader}}
+
+    <main class="container" id="layout-main">
+      <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute;">
+        <defs>
+          <symbol id="quill" viewBox="0 0 1024 1024">
+            <path class="path1" d="M0 1024c128-384 463-1024 1024-1024-263 211-384 704-576 704s-192 0-192 0l-192 320h-64z"></path>
+          </symbol>
+          <symbol id="cog" viewBox="0 0 1024 1024">
+            <path class="path1" d="M933.79 610.25c-53.726-93.054-21.416-212.304 72.152-266.488l-100.626-174.292c-28.75 16.854-62.176 26.518-97.846 26.518-107.536 0-194.708-87.746-194.708-195.99h-201.258c0.266 33.41-8.074 67.282-25.958 98.252-53.724 93.056-173.156 124.702-266.862 70.758l-100.624 174.292c28.97 16.472 54.050 40.588 71.886 71.478 53.638 92.908 21.512 211.92-71.708 266.224l100.626 174.292c28.65-16.696 61.916-26.254 97.4-26.254 107.196 0 194.144 87.192 194.7 194.958h201.254c-0.086-33.074 8.272-66.57 25.966-97.218 53.636-92.906 172.776-124.594 266.414-71.012l100.626-174.29c-28.78-16.466-53.692-40.498-71.434-71.228zM512 719.332c-114.508 0-207.336-92.824-207.336-207.334 0-114.508 92.826-207.334 207.336-207.334 114.508 0 207.332 92.826 207.332 207.334-0.002 114.51-92.824 207.334-207.332 207.334z"></path>
+          </symbol>
+          <symbol id="bin" viewBox="0 0 1024 1024">
+            <path class="path1" d="M128 320v640c0 35.2 28.8 64 64 64h576c35.2 0 64-28.8 64-64v-640h-704zM320 896h-64v-448h64v448zM448 896h-64v-448h64v448zM576 896h-64v-448h64v448zM704 896h-64v-448h64v448z"></path>
+            <path class="path2" d="M848 128h-208v-80c0-26.4-21.6-48-48-48h-224c-26.4 0-48 21.6-48 48v80h-208c-26.4 0-48 21.6-48 48v80h832v-80c0-26.4-21.6-48-48-48zM576 128h-192v-63.198h192v63.198z"></path>
+          </symbol>
+        </defs>
+      </svg>
+      <section class="header">
+        <div class="header__logo">
+          <h1 class="header__logo__title">Sudoku</h1>
+          <small class='header__logo__tagline sw--only'>Works offline!</small>
+        </div>
+        <div class='header--extra'>
+          <div class="difficulty">
+            <button class="header--extra__menu-button js-menu-open-btn" type="button">
+              <span class='header--extra__menu-button__text js-difficulty-label'>Medium </span>
+              <svg class="icon icon-cog">
+                <use xlink:href="#cog"></use>
+              </svg>
+            </button>
+            <ul class='menu'>
+              <li class='menu__item-wrap'>
+                <button type="button" class="menu__item js-generate-board-btn--easy">Easy</button>
+              </li>
+              <li class='menu__item-wrap'>
+                <button type="button" class="menu__item js-generate-board-btn--medium">Medium</button>
+              </li>
+              <li class='menu__item-wrap'>
+                <button type="button" class="menu__item js-generate-board-btn--hard">Hard</button>
+              </li>
+              <li class='menu__item-wrap'>
+                <button type="button" class="menu__item js-generate-board-btn--very-hard">Very Hard</button>
+              </li>
+            </ul>
+          </div>
+          <div class="help">
+            <button class="header--extra__menu-button js-menu-open-btn" type="button">Stuck?
+            </button>
+            <ul class='menu'>
+              <li class='menu__item-wrap'>
+                <button type="button" class="menu__item js-solve-step-btn">Solve One Step</button>
+              </li>
+              <li class='menu__item-wrap'>
+                <button type="button" class="menu__item js-solve-all-btn">Solve All</button>
+              </li>
+              <li class='menu__item-wrap'>
+                <button type="button" class="menu__item js-analyze-board-btn">Analyze</button>
+              </li>
+              <li class='menu__item-wrap'>
+                <a class='menu__item' href="http://www.learn-sudoku.com/basic-techniques.html">Sudoku strategies
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <div class="wrap wrap--only-large">
+        <div class="sudoku-board js-sudoku-board"></div>
+      </div>
+      <section class="touch-controls">
+        <ul class='touch-controls__items'>
+          <li class='touch-controls__item-wrap'>
+            <button type="button" class='touch-controls__item js-digit-button active' data-digit-button-value='1'>1</button>
+          </li>
+          <!--
+    				-->
+          <li class='touch-controls__item-wrap'>
+            <button type="button" class='touch-controls__item js-digit-button' data-digit-button-value='2'>2</button>
+          </li>
+          <!--
+    				-->
+          <li class='touch-controls__item-wrap'>
+            <button type="button" class='touch-controls__item js-digit-button' data-digit-button-value='3'>3</button>
+          </li>
+          <!--
+    				-->
+          <li class='touch-controls__item-wrap'>
+            <button type="button" class='touch-controls__item js-digit-button' data-digit-button-value='4'>4</button>
+          </li>
+          <!--
+    				-->
+          <li class='touch-controls__item-wrap'>
+            <button type="button" class='touch-controls__item js-digit-button' data-digit-button-value='5'>5</button>
+          </li>
+          <!--
+    				-->
+          <li class='touch-controls__item-wrap'>
+            <button type="button" class='touch-controls__item js-digit-button' data-digit-button-value='6'>6</button>
+          </li>
+          <!--
+    				-->
+          <li class='touch-controls__item-wrap'>
+            <button type="button" class='touch-controls__item js-digit-button' data-digit-button-value='7'>7</button>
+          </li>
+          <!--
+    				-->
+          <li class='touch-controls__item-wrap'>
+            <button type="button" class='touch-controls__item js-digit-button' data-digit-button-value='8'>8</button>
+          </li>
+          <!--
+    				-->
+          <li class='touch-controls__item-wrap'>
+            <button type="button" class='touch-controls__item js-digit-button' data-digit-button-value='9'>9</button>
+          </li>
+          <!--
+    				-->
+          <li class='touch-controls__item-wrap'>
+            <button type="button" class='touch-controls__item touch-controls__item--reset js-digit-button' data-digit-button-value='C'>
+              <svg class="icon icon-bin">
+                <use xlink:href="#bin"></use>
+              </svg>
+            </button>
+          </li>
+          <!--
+    				-->
+          <li class='touch-controls__item-wrap touch-controls__item--float'>
+            <button type="button" class='touch-controls__item touch-controls__item--candidates js-toggle-candidate-mode-button'>
+              <svg class="icon icon-quill">
+                <use xlink:href="#quill"></use>
+              </svg>
+            </button>
+          </li>
+        </ul>
+      </section>
+      <footer class='main-footer'>
+        Copyright © 2015 <a href='//jonassebastianohlsson.com'>Jonas Ohlsson</a>
+        — Front End Developer
+
+      </footer>
+      <div class='modal js-modal'>
+        <div class='modal__content js-modal-content'></div>
+      </div>
+    </main>
+
+    {{> layoutFooter}}
+
+  </div>
+  <!-- JavaScript 文件是可选的。从以下两种建议中选择一个即可！ -->
+
+  <!-- 选项 1：jQuery 和 Bootstrap 集成包（集成了 Popper） -->
+  <script src="./lib/jquery@3.7.1/jquery.min.js" crossorigin="anonymous"></script>
+  <script src="./lib/bootstrap@4.6.2/bootstrap.min.js" crossorigin="anonymous"></script>
+
+  <!-- 选项 2：Popper 和 Bootstrap 的 JS 插件各自独立 -->
+  <!--
+    <script src="https://unpkg.com/jquery@3.5.1/dist/jquery.slim.min.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/popper.js@1.16.1/dist/umd/popper.min.js"crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/bootstrap@4.6.2/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    -->
+
+  <script src="./lib/handlebars@4.7.8/handlebars.min.js"></script>
+
+  <script src="./assets/app/js/app.js"></script>
+
+
+  <script>
+    $(document).ready(function () {
+      render({
+        title: "Sudoku | Games",
+        paginator: [
+
+        ],
+        dependencies: [
+
+        ],
+        references: [
+          { title: "pocketjoso/sudokuJS", url: "https://github.com/pocketjoso/sudokuJS/" }
+        ],
+      });
+    })
+  </script>
+  <script>var dev = ""; var boardSize = "";</script>
+
+  <script src="./assets/sudoku/js/app.js"></script>
+</body>
+
+</html>
