@@ -149,7 +149,7 @@ hr {
 }
 
 #layout-main.container {
-  width: 500px;
+  /* width: 500px; */
   margin: 0 auto;
 }
 
@@ -184,7 +184,7 @@ hr {
 }
 
 .game-container {
-  margin-top: 40px;
+  margin: 40px auto;
   position: relative;
   padding: 15px;
   cursor: default;
