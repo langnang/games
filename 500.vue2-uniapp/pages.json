@@ -1,0 +1,53 @@
+{
+  "pages": [{
+      "path": "pages/index/index",
+      "style": {
+        "navigationBarTitleText": "Games"
+      }
+    },
+    {
+      "path": "pages/2048/index",
+      "style": {
+        "navigationBarTitleText": "2048",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
+      "path": "pages/NumberMask/NumberMask",
+      "style": {
+        "navigationBarTitleText": "数字寻宝",
+        "enablePullDownRefresh": false
+      }
+
+    }, {
+      "path": "pages/Nonogram/Nonogram",
+      "style": {
+        "navigationBarTitleText": "以数织图",
+        "enablePullDownRefresh": false
+      }
+
+    }, {
+      "path": "pages/NumberCut/NumberCut",
+      "style": {
+        "navigationBarTitleText": "拆数专家",
+        "enablePullDownRefresh": false
+      }
+
+    }, {
+      "path": "pages/sudoku/sudoku",
+      "style": {
+        "navigationBarTitleText": "数独",
+        "enablePullDownRefresh": false
+      }
+    }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8",
+    "app-plus": {
+      "background": "#efeff4"
+    }
+  }
+}
