@@ -15,6 +15,41 @@
 
 
   <link rel="stylesheet" href="./assets/app/css/app.css">
+
+  <style>
+    #layout-main .col .card,
+    #layout-main .col-3 .card {
+      padding-top: 100%;
+
+    }
+
+    #layout-main .col-6 .card {
+      padding-top: calc(50% - .25rem);
+    }
+
+    .card>.progress {
+      padding-top: 100%;
+      margin-top: calc(-100% - 2px);
+      border: 1px solid #e9ecef;
+    }
+
+    .card>.progress>.progress-bar {
+      padding-top: 100%;
+      margin-top: calc(-100% - 2px);
+    }
+
+    .pt-100pct {
+      padding-top: 100%;
+    }
+
+    .pt-50pct {
+      padding-top: calc(50% - .25rem) !important;
+    }
+
+    .pt-200pct {
+      padding-top: calc(200% + .25rem) !important;
+    }
+  </style>
 </head>
 
 <body>
@@ -23,37 +58,42 @@
     {{> layoutHeader}}
 
     <main class="container" id="layout-main">
-      <div class="row">
-        <div class="col px-1">
-          <form action="">
-            <div class="input-group mb-1">
-              <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
-              <div class="input-group-append">
-                <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-      <div class="row row-cols-3">
-        {{#each paginator}}
-        <div class="col px-1 my-1">
-          <a href="{{this.url}}" class="card text-decoration-none">
-            <div class="card-body p-2">
-              <div class="media">
-                <img class="bd-placeholder-img mr-2" src="holder.js/48x48">
-                </img>
-                <div class="media-body">
-                  <h5 class="card-title mt-0">{{this.title}}</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">{{this.subtitle}}</h6>
+      <div class="row justify-content-center">
+        <div class="col-5">
+
+          <div class="row row-cols-4">
+            {{#each map }}
+            <div class="col-{{this.0}} p-1">
+              <div class="card">
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
               </div>
-              <p class="card-text text-nowrap text-truncate w-100">{{this.description}}</p>
             </div>
-          </a>
+            {{/each}}
+            <div class="col-6 p-1">
+              <div class="card">
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+            <div class="col p-1">
+              <div class="card pt-200pct"></div>
+            </div>
+            <div class="col p-1">
+              <div class="card"></div>
+              <div class="card"></div>
+            </div>
+            <div class="col p-1">
+              <div class="card"></div>
+              <div class="card"></div>
+            </div>
+            <div class="col p-1">
+              <div class="card"></div>
+            </div>
+          </div>
         </div>
-        {{/each}}
-
       </div>
     </main>
 
@@ -81,7 +121,8 @@
   <script>
     $(document).ready(function () {
       render({
-        title: "Games",
+        title: "地下城 | Games",
+        map: [[3, 1], [3, 1], [3, 1], [3, 1], [3, 1], [3, 1], [3, 1],],
         paginator: [
           { title: "2048", subtitle: "subtitle", description: "...", url: "./2048.html" },
           { title: "井字棋", subtitle: "subtitle", description: "...", url: "./tictactoe.html" },
@@ -101,7 +142,6 @@
           { title: "消消乐", subtitle: "subtitle", description: "...", url: "#" },
           { title: "扫雷", subtitle: "subtitle", description: "...", url: "#" },
           { title: "象棋", subtitle: "subtitle", description: "...", url: "#" },
-          { title: "地下城", subtitle: "subtitle", description: "...", url: "./dungeon.html" },
         ],
         styles: [],
         scripts: [],
