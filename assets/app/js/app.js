@@ -4,8 +4,8 @@ $(document).ready(function () {
 
 
 Handlebars.registerPartial('layoutHeader', `
-<div id="layout-header">
-  <div class="jumbotron py-4 my-3">
+<div id="layout-header" class="row">
+  <div class="jumbotron col py-4 my-3">
     <h1 class="display-4">{{title}}</h1>
     <hr class="my-2">
     <p>{{description}}</p>
@@ -13,7 +13,7 @@ Handlebars.registerPartial('layoutHeader', `
 </div>
 `);
 Handlebars.registerPartial('layoutFooter', `
-<footer id="layout-footer" class="container-fluid text-light bg-dark">
+<footer id="layout-footer" class="row text-light bg-dark">
   <div class="container">
     <div class="row row-cols-3 py-1">
       <div class="col text-center"></div>
@@ -37,7 +37,13 @@ Handlebars.registerPartial('layoutFooter', `
   </div>
 </footer>
 `);
-
+Handlebars.registerHelper('makeArray', function (count) {
+  let arr = [];
+  for (let i = 0; i < count; i++) {
+    arr.push(i);
+  }
+  return arr;
+});
 
 const getHbs = () => { }
 
